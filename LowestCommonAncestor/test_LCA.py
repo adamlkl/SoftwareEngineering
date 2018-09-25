@@ -23,5 +23,20 @@ class TestLCA(unittest.TestCase):
         test3.insert(6)
         self.assertEqual(test3.__size__(), 4, "Testing if size of empty LCA is 1")
 
+    def testFindLCA(self):
+        test4 = LCA()
+        test4.insert(7)
+        test4.insert(4)
+        test4.insert(1)
+        test4.insert(5)
+        test4.insert(6)
+        test4.insert(9)
+        test4.insert(10)
+        test4.insert(8)
+        self.assertEqual(test4.findlca(7, 7), 7, "Find LCA if it is 7")
+        self.assertEqual(test4.findlca(6, 1), 4, "Find LCA if it is 4")
+        self.assertEqual(test4.findlca(1, 8), 7, "Find LCA if it is 7")
+        self.assertEqual(test4.findlca(10,8), 9, "Find LCA if it is 9")
+
 if __name__ == '__main__':
     unittest.main()

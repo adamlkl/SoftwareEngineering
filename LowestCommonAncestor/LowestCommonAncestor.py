@@ -78,9 +78,10 @@ class LCA:
         if node.data == k:
             return True
 
-        if (node.left is None and self.__findpath(node.left, path, k)) or \
-                (node.right is None and self.__findpath(node.right, path, k)):
+        if (node.left is not None and self.__findpath(node.left, path, k)) or \
+                (node.right is not None and self.__findpath(node.right, path, k)):
             return True
 
         path.pop()
         return False
+

@@ -10,26 +10,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/LowestCommonAncestor$LowestCommonAncestor.coverage" NAME="LowestCommonAncestor Coverage Results" MODIFIED="1537906197820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/LowestCommonAncestor$Unittests_in_test_LCA_py.coverage" NAME="Unittests in test_LCA.py Coverage Results" MODIFIED="1537906227069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LowestCommonAncestor$LowestCommonAncestor.coverage" NAME="LowestCommonAncestor Coverage Results" MODIFIED="1537909000408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LowestCommonAncestor$Unittests_in_test_LCA_py.coverage" NAME="Unittests in test_LCA.py Coverage Results" MODIFIED="1537909165278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LowestCommonAncestor.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LowestCommonAncestor.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LowestCommonAncestor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="85" column="20" lean-forward="false" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
+            <state relative-caret-position="36">
+              <caret line="72" column="23" lean-forward="true" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_LCA.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test_LCA.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_LCA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+            <state relative-caret-position="166">
+              <caret line="38" column="69" lean-forward="false" selection-start-line="38" selection-start-column="69" selection-end-line="38" selection-end-column="69" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -172,9 +172,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_LCA_py - 2018.09.25 at 20h 44m 12s.xml">
-      <configuration name="Unittests in test_LCA.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_test_LCA_py - 2018.09.25 at 20h 44m 57s.xml">
       <configuration name="Unittests in test_LCA.py" configurationId="tests" />
     </history-entry>
@@ -191,6 +188,18 @@
       <configuration name="Unittests in test_LCA.py" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_in_test_LCA_py - 2018.09.25 at 21h 10m 27s.xml">
+      <configuration name="Unittests in test_LCA.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_LCA_py - 2018.09.25 at 21h 36m 14s.xml">
+      <configuration name="Unittests in test_LCA.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_LCA_py - 2018.09.25 at 21h 56m 53s.xml">
+      <configuration name="Unittests in test_LCA.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_LCA_py - 2018.09.25 at 21h 59m 01s.xml">
+      <configuration name="Unittests in test_LCA.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_LCA_py - 2018.09.25 at 21h 59m 25s.xml">
       <configuration name="Unittests in test_LCA.py" configurationId="tests" />
     </history-entry>
   </component>
@@ -254,21 +263,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LowestCommonAncestor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="85" column="20" lean-forward="false" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_LCA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+        <state relative-caret-position="166">
+          <caret line="38" column="69" lean-forward="false" selection-start-line="38" selection-start-column="69" selection-end-line="38" selection-end-column="69" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LowestCommonAncestor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="72" column="23" lean-forward="true" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
