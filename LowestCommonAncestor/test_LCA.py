@@ -1,10 +1,15 @@
-from unittest import TestCase
+import unittest
 from LowestCommonAncestor import *
 
-class TestLCA(TestCase):
+
+class TestLCA(unittest.TestCase):
     def test_isEmpty(self):
-        teslca = LCA(0)
-        self.fail()
+        test1 = LCA()
+        self.assertEqual(test1.isempty(), True, "Testing if LCA is empty")
 
     def test_findLCA(self):
-        self.fail()
+        test2 = LCA()
+        self.assertEqual(test2.__size__(), 0, "Testing if size of empty LCA is 0")
+
+if __name__ == '__main__':
+    unittest.main()
