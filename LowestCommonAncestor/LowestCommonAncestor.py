@@ -21,6 +21,10 @@ class LCA:
     def insert(self, data):
         if data is None:
             return False
+        elif self.root is None:
+            self.root = TreeNode(data)
+            self.size += 1
+            return True
         else:
             self.__insert(self.root, data)
             return True
@@ -34,7 +38,7 @@ class LCA:
                 else:
                     self.__insert(node.left, data)
             elif node.data < data:
-                if node.left is None:
+                if node.right is None:
                     node.right = TreeNode(data)
                     self.size += 1
                 else:
