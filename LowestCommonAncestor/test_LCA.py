@@ -14,7 +14,7 @@ class TestLCA(unittest.TestCase):
     '#TODO testLCA and other functions on empty tree'
     def test_lca(self):
         test = LCA()
-        self.assertFalse(test.findlca(4,5))
+        self.assertFalse(test.findlca(4, 5))
 
     def testInsert(self):
         test3 = LCA()
@@ -51,7 +51,7 @@ class TestLCA(unittest.TestCase):
         self.assertEqual(test4.findlca(7, 7), 7, "Find LCA if it is 7")
         self.assertEqual(test4.findlca(6, 1), 4, "Find LCA if it is 4")
         self.assertEqual(test4.findlca(1, 8), 7, "Find LCA if it is 7")
-        self.assertEqual(test4.findlca(10,8), 9, "Find LCA if it is 9")
+        self.assertEqual(test4.findlca(10, 8), 9, "Find LCA if it is 9")
 
     '#TODO test LCA on unavailable nodes in the tree'
     def testFindLCAfail(self):
@@ -64,11 +64,22 @@ class TestLCA(unittest.TestCase):
         test5.insert(9)
         test5.insert(10)
         test5.insert(8)
-        self.assertEqual(test5.findlca(4, 11), -1,"Find unavailable nodes in LCA")
+        self.assertEqual(test5.findlca(4, 11), -1, "Find unavailable nodes in LCA")
         self.assertEqual(test5.findlca(13, 11), -1, "Find unavailable nodes in LCA")
         self.assertEqual(test5.findlca(13, 8), -1, "Find unavailable nodes in LCA")
 
     '#TODO test num values'
+    def test_nonintegers(self):
+        test6 = LCA()
+        test6.insert(7)
+        test6.insert(4)
+        test6.insert(1)
+        test6.insert(5)
+        test6.insert(6)
+        self.assertFalse(test6.findlca("RR", 6.798))
+        self.assertFalse(test6.findlca(7, "6"))
+        self.assertFalse(test6.findlca("r", 6))
+        self.assertFalse(test6.findlca(None, None))
 
 
 if __name__ == '__main__':

@@ -49,9 +49,12 @@ class LCA:
     '# Returns LCA if node a , b are present in the given'
     '# binary tre otherwise return -1'
     def findlca(self, a, b):
-
         if self.isempty():
             return False
+
+        if type(a) is not int or type(b) is not int:
+            return False
+
         '# To store paths to a and b from the root'
         path1 = []
         path2 = []
@@ -84,4 +87,3 @@ class LCA:
 
         path.pop()
         return False
-
