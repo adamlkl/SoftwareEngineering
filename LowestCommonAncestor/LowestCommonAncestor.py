@@ -8,22 +8,27 @@ class TreeNode:
         self.data = data
 
 
-"""#LCA class: creates a binary tree that includes basic functions of the tree and performs LCA"""
+'#LCA class: creates a binary tree that includes basic functions of the tree and performs LCA'
+
+
 class LCA:
-
-
-    """#initiate class"""
+    """#TODO initiate class"""
     def __init__(self):
         self.size = 0
         self.root = None
 
+    '#TODO public boolean isEmpty ()'
+    '#return if the tree is empty namely size is 0'
     def isempty(self):
         return self.root is None
 
+    '#TODO public int size'
+    '#return siz of tree'
     def __size__(self):
         return self.size
 
-    '#TODO'
+    '#TODO public boolean insert (data)'
+    '#returns true if insert data successfully, otherwise false'
     def insert(self, data):
         if data is None:
             return False
@@ -35,6 +40,8 @@ class LCA:
             self.__insert(self.root, data)
             return True
 
+    '#TODO public boolean insert (node, data)'
+    '#insert a data into the tree, creates a new node if there are no duplicates of the data in the tree.'
     def __insert(self, node, data):
         if node.data:
             if node.data > data:
@@ -52,6 +59,7 @@ class LCA:
         else:
             node.data = data
 
+    '# TODO public boolean findLCA (int a, int b)'
     '# Returns LCA if node a , b are present in the given'
     '# binary tre otherwise return -1'
     def findlca(self, a, b):
@@ -78,6 +86,9 @@ class LCA:
             i += 1
         return path1[i - 1]
 
+    '#TODO private boolean findPath (TreeNode node, int k)'
+    '#check the whole tree for the data and append the path into a list'
+    '#returns True if path found, otherwise return False'
     def __findpath(self, node, path, k):
         if node is None:
             return False
