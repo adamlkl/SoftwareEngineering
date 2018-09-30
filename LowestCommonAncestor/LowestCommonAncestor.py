@@ -1,3 +1,6 @@
+"""#create a Node class for the binary tree"""
+
+
 class TreeNode:
     def __init__(self, data):
         self.left = None
@@ -5,8 +8,11 @@ class TreeNode:
         self.data = data
 
 
+"""#LCA class: creates a binary tree that includes basic functions of the tree and performs LCA"""
 class LCA:
 
+
+    """#initiate class"""
     def __init__(self):
         self.size = 0
         self.root = None
