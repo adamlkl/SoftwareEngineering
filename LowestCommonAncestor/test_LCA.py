@@ -40,6 +40,15 @@ class TestLCA(unittest.TestCase):
         test.insert(4)
         self.assertEqual(test.__size__(), 3, "Testing final size of LCA if it is 3")
 
+    '#TODO test inserting non-integer type data'
+    def testInsert3(self):
+        test = LCA()
+        self.assertFalse(test.insert("rare"),"Test inserting string")
+        self.assertFalse(test.insert(1243.667),"Test inserting float")
+        self.assertFalse(test.insert('e'), "Test inserting char")
+        self.assertFalse(test.insert(None), "Test inserting null values")
+        self.assertTrue(test.insert(4),"Test inserting integer data")
+
     '#TODO test LCA on a filled tree'
     def testFindLCA(self):
         test4 = LCA()

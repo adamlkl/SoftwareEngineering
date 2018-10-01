@@ -12,7 +12,6 @@ class TreeNode:
 
 
 class LCA:
-    """#TODO initiate class"""
     def __init__(self):
         self.size = 0
         self.root = None
@@ -30,7 +29,7 @@ class LCA:
     '#TODO public boolean insert (data)'
     '#returns true if insert data successfully, otherwise false'
     def insert(self, data):
-        if data is None:
+        if data is None or type(data) is not int:
             return False
         elif self.root is None:
             self.root = TreeNode(data)
