@@ -3,10 +3,12 @@ from LowestCommonAncestor import *
 
 
 class TestLCA(unittest.TestCase):
+    """#TODO test empty"""
     def test_isEmpty(self):
         test1 = LCA()
         self.assertEqual(test1.isempty(), True, "Testing if LCA is empty")
 
+    '#TODO check empty size of tree'
     def test_empty_size(self):
         test2 = LCA()
         self.assertEqual(test2.__size__(), 0, "Testing if size of empty LCA is 0")
@@ -38,6 +40,7 @@ class TestLCA(unittest.TestCase):
         test.insert(4)
         self.assertEqual(test.__size__(), 3, "Testing final size of LCA if it is 3")
 
+    '#TODO test LCA on a filled tree'
     def testFindLCA(self):
         test4 = LCA()
         test4.insert(7)
@@ -68,7 +71,7 @@ class TestLCA(unittest.TestCase):
         self.assertEqual(test5.findlca(13, 11), -1, "Find unavailable nodes in LCA")
         self.assertEqual(test5.findlca(13, 8), -1, "Find unavailable nodes in LCA")
 
-    '#TODO test num values'
+    '#TODO test num values and non int type data on LCA'
     def test_nonintegers(self):
         test6 = LCA()
         test6.insert(7)
