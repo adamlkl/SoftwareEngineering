@@ -10,9 +10,11 @@ class TestLCA(unittest.TestCase):
     def test_empty_size(self):
 
     '#TODO testLCA and other functions on empty tree'
-    def test_lca(self):
+    def test_lca_empty(self):
 
     def testInsert(self):
+
+    def test_Acyclic(self):
 
     '#TODO test inserting repetitively same data and check size'
     def testInsert2(self):
