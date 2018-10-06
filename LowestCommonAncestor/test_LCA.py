@@ -93,6 +93,23 @@ class TestLCA(unittest.TestCase):
         self.assertFalse(test6.findlca("r", 6))
         self.assertFalse(test6.findlca(None, None))
 
+    def test_read_file(self):
+        file_x = open("tinyDAG.txt", "r")
+        vn = file_x.readline()
+        en = file_x.readline()
+        for x in file_x:
+            s = x.readline()
+            v = s.split(" ")[0]
+            e = s.split(" ")[1]
+
+        self.assertEqual(vn, 13)
+        self.assertEqual(vn, 15)
+
+
+
+
+
+
 
 if __name__ == '__main__':
     unittest.main()
