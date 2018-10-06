@@ -1,5 +1,0 @@
-'#TODO create graph class'
-'#TODO add edges'
-'#TODO check if it is cyclic or not public n private'
-'#TODO get LCA'
-'#TODO find path'
