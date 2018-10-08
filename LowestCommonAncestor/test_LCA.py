@@ -2,48 +2,54 @@ import unittest
 from LowestCommonAncestor import *
 
 
-class TestLCA(unittest.TestCase):
-    """#TODO test empty"""
-    def test_isEmpty(self):
+class TestDigraph(unittest.TestCase):
 
-    '#TODO check empty size of tree'
-    def test_empty_size(self):
+    def test_init(self):
+        test = Digraph(0, 0)
+        self.assertEqual(test.get_edge(), 0)
+        self.assertEqual(test.get_vertex(), 0)
 
-    '#TODO testLCA and other functions on empty tree'
-    def test_lca_empty(self):
+    def test_add_vertex(self):
+        self.fail()
 
-    def testInsert(self):
+    def test_len(self):
+        self.fail()
 
-    def test_Acyclic(self):
+    def test_find_root(self):
+        self.fail()
 
-    '#TODO test inserting repetitively same data and check size'
-    def testInsert2(self):
+    def test_validate_vertex(self):
+        self.fail()
 
-    '#TODO test inserting non-integer type data'
-    def testInsert3(self):
+    def test_incident(self):
+        self.fail()
 
-    '#TODO test LCA on a filled tree'
-    def testFindLCA(self):
+    def test_check_cyclic(self):
+        self.fail()
 
-    '#TODO test LCA on unavailable nodes in the tree'
-    def testFindLCAfail(self):
+    def test_get_vertex(self):
+        self.fail()
 
-    '#TODO test num values and non int type data on LCA'
-    def test_nonintegers(self):
+    def test_get_edge(self):
+        self.fail()
+
+    def test_compute_lowest_common_ancestor(self):
+        self.fail()
 
     def test_read_file(self):
         file_x = open("tinyDAG.txt", "r")
-        vn = file_x.readline()
-        en = file_x.readline()
+        vn = int(file_x.readline())
+        en = int(file_x.readline())
         test = Digraph(vn, en)
 
         for x in file_x:
-            s = x.readline()
-            test.add_vertex(s.split(" ")[0], s.split(" ")[1])
+            test.add_vertex(int(x.split(" ")[0]), int(x.split(" ")[1]))
 
-        self.assertEqual(test.get_vertex(), vn)
-        self.assertEqual(test.get_edge(), en)
-        self.assertFalse(test.check_cyclic())
+        self.assertEqual(test.get_vertex(), 13)
+        self.assertEqual(test.get_edge(), 15)
+        self.assertTrue(test.check_cyclic())
+        self.assertEqual(test.find_root(), 2)
+        self.assertEqual(test.len(), "")
 
 
 if __name__ == '__main__':
