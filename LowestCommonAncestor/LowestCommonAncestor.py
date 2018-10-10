@@ -22,3 +22,5 @@ class Digraph:
 
     def validate_vertex(self, v):
         return (type(v) is int) and (v >= 0) and (v < self.V)
+
+
