@@ -23,6 +23,19 @@ class Digraph:
     def validate_vertex(self, v):
         return (type(v) is int) and (v >= 0) and (v < self.V)
 
+    def indegree(self, v):
+        return self.indegree[v]
+
+    def incidence(self, v):
+    return self.digraph[v]
+    
+    def find_root(self):
+        roots = []
+        for index in range(len(self.indegree)):
+            if self.indegree[index] is 0:
+                roots.append(index)
+        return roots
+    
 #TODO
 Find root, check incidence
 Check Acyclic
