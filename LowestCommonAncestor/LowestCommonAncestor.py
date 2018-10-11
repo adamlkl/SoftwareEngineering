@@ -35,7 +35,29 @@ class Digraph:
             if self.indegree[index] is 0:
                 roots.append(index)
         return roots
-    
+
+    def check_cyclic(self):
+        visit = [False] * self.V
+        remarked = [False] * self.V
+        for v in range(self.V):
+            if visit[v] is False:
+                if self.__check_cyclic(v, visit, remarked) is True:
+                    return True
+        return False
+
+    def __check_cyclic(self, v, visit, remarked):
+        visit[v] = True
+        remarked[v] = True
+
+        for w in self.digraph[v]:
+            if visit[w] is False:
+                return self.__check_cyclic(w, visit, remarked)
+                elif visit[w] is True and remarked[w] is True:
+                    return True
+
+        remarked[v] = True
+            return False
+
 #TODO
 Find root, check incidence
 Check Acyclic
