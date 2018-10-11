@@ -1,55 +1,71 @@
 import unittest
-from LowestCommonAncestor import *
+from LowestCommonAncestorDAG import *
 
 
 class TestDigraph(unittest.TestCase):
-
+    
     def test_init(self):
-        test = Digraph(0, 0)
-        self.assertEqual(test.get_edge(), 0)
-        self.assertEqual(test.get_vertex(), 0)
-
+        test1 = Digraph(0, 0)
+        self.assertEqual(test1.get_edge(), 0)
+        self.assertEqual(test1.get_vertex(), 0)
+    
     def test_add_vertex(self):
-        self.fail()
-
-    def test_len(self):
-        self.fail()
-
+        test2 = Digraph(3, 3)
+        test2.add_vertex(0, 1)
+        test2.add_vertex(1, 2)
+        test2.add_vertex(2, 3)
+        self.assertEqual(test.print_digraph(), "")
+    
     def test_find_root(self):
-        self.fail()
-
+        test3 = Digraph(1, 1)
+        self.assertEqual(test3.find_root(), 1)
+    
+    def test_find_root2(self):
+        test4 = Digraph(3, 2)
+        test4.add_vertex(0, 1)
+        test4.add_vertex(0, 2)
+        self.assertEqual(test4.find_root(), 0)
+    
     def test_validate_vertex(self):
-        self.fail()
-
+        test5 = Digraph(3, 3)
+        test5.add_vertex(0, 1)
+        test5.add_vertex(1, 2)
+        test5.add_vertex(2, 3)
+        self.assertTrue(test5.validate_vertex(0))
+        self.assertTrue(test5.validate_vertex(1))
+        self.assertTrue(test5.validate_vertex(2))
+        self.assertFalse(test5.validate_vertex(7))
+        self.assertFalse(test5.validate_vertex(-1))
+    
     def test_incident(self):
-        self.fail()
-
+        test6 = Digraph(3, 2)
+        test6.add_vertex(0, 1)
+        test6.add_vertex(0, 2)
+        self.assertEqual(test6.incidence(0), {1, 2})
+    
     def test_check_cyclic(self):
-        self.fail()
-
-    def test_get_vertex(self):
-        self.fail()
-
-    def test_get_edge(self):
-        self.fail()
-
+        test7 = Digraph(3, 2)
+        test7.add_vertex(0, 1)
+        test7.add_vertex(0, 2)
+        self.assertFalse(test7.check_cyclic())
+        test8 = Digraph(3, 3)
+        test8.add_vertex(0, 1)
+        test8.add_vertex(1, 2)
+        test8.add_vertex(2, 3)
+        self.assertTrue(test8.check_cyclic())
+    
     def test_compute_lowest_common_ancestor(self):
         self.fail()
-
+    
     def test_read_file(self):
-        file_x = open("tinyDAG.txt", "r")
-        vn = int(file_x.readline())
-        en = int(file_x.readline())
-        test = Digraph(vn, en)
-
-        for x in file_x:
-            test.add_vertex(int(x.split(" ")[0]), int(x.split(" ")[1]))
-
-        self.assertEqual(test.get_vertex(), 13)
-        self.assertEqual(test.get_edge(), 15)
-        self.assertTrue(test.check_cyclic())
-        self.assertEqual(test.find_root(), 2)
-        self.assertEqual(test.len(), "")
+        file_xx = open("tinyDAG.txt", "r")
+        vt = int(file_xx.readline())
+        ed = int(file_xx.readline())
+        test77 = Digraph(vt, ed)
+        
+        for y in file_xx:
+            test77.add_vertex(int(y.split(" ")[0]), int(y.split(" ")[1]))
+        file_x.close()
 
 
 if __name__ == '__main__':
