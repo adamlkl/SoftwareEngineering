@@ -1,5 +1,5 @@
 import unittest
-from LowestCommonAncestorDAG import *
+from LowestCommonAncestor import *
 
 
 class TestDigraph(unittest.TestCase):
