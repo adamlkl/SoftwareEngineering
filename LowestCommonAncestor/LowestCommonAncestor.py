@@ -7,15 +7,26 @@ class Digraph:
     def __init__(self, vertices, edges):
         self.V = int(vertices)
         self.E = int(edges)
+        self.edges = 0
         self.digraph = defaultdict(list)
+
+        for v in range(self.V):
+            self.digraph[v].append(0)
+            self.digraph[v].pop(0)
+
         self.indegree = [0] * self.V
         self.marked = [False] * self.V
         self.edgeTo = [-1] * self.V
-    
+
     def add_vertex(self, v, adj):
         if self.validate_vertex(v) and self.validate_vertex(adj):
             self.digraph[v].append(adj)
             self.indegree[adj] += 1
+            self.edges += 1
+
+    def check_vertex(self):
+        if self.V != len(self.digraph):
+            self.V = len(self.digraph)
 
     def indegree(self, v):
         return self.indegree[v]
@@ -34,11 +45,12 @@ class Digraph:
         return (type(v) is int) and (v >= 0) and (v < self.V)
     
     def check_cyclic(self):
+        self.check_vertex()
         visit = [False] * self.V
         remarked = [False] * self.V
         for v in range(self.V):
             if visit[v] is False:
-                if self.__check_cyclic(v, visit, remarked) is True:
+                if self.__check_cyclic(v, visit, remarked):
                     return True
         return False
     
@@ -48,11 +60,12 @@ class Digraph:
         
         for w in self.digraph[v]:
             if visit[w] is False:
-                return self.__check_cyclic(w, visit, remarked)
+                if self.__check_cyclic(w, visit, remarked):
+                    return True
             elif visit[w] is True and remarked[w] is True:
                 return True
         
-        remarked[v] = True
+        remarked[v] = False
         return False
 
     def get_vertex(self):
@@ -91,6 +104,10 @@ class Digraph:
     
     def compute_lowest_common_ancestor(self, v, w, root):
         self.bfs(root)
+        self.check_vertex()
+        if self.check_cyclic():
+            return -1
+
         if self.haspathto(v) and self.haspathto(w):
             path1 = self.pathto(v, root)
             path2 = self.pathto(w, root)
@@ -100,22 +117,10 @@ class Digraph:
                 p2 = path2.get()
                 if p1 == p2:
                     return p1
-            return 100
+            return -3
         
         else:
-            return -1
+            return -2
 
     def print_digraph(self):
         return self.digraph
-
-
-file_x = open("tinyDAG.txt", "r")
-vn = int(file_x.readline())
-en = int(file_x.readline())
-test = Digraph(vn, en)
-
-for x in file_x:
-    test.add_vertex(int(x.split(" ")[0]), int(x.split(" ")[1]))
-print(test.compute_lowest_common_ancestor(1, 6, 2))
-print(test.compute_lowest_common_ancestor(11, 10, 2))
-print(test.compute_lowest_common_ancestor(6, 9, 2))

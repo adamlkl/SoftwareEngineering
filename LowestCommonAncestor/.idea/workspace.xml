@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18c8db4d-695c-4981-a4cd-6f954986e1b6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LowestCommonAncestor.py" beforeDir="false" afterPath="$PROJECT_DIR$/LowestCommonAncestor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_LCA.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_LCA.py" afterDir="false" />
     </list>
@@ -13,8 +12,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/LowestCommonAncestor$LowestCommonAncestor.coverage" NAME="LowestCommonAncestor Coverage Results" MODIFIED="1537909000408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/LowestCommonAncestor$Unittests_in_test_LCA_py.coverage" NAME="Unittests in test_LCA.py Coverage Results" MODIFIED="1539292455888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LowestCommonAncestor$LowestCommonAncestor.coverage" NAME="LowestCommonAncestor Coverage Results" MODIFIED="1539346888933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LowestCommonAncestor$Unittests_in_test_LCA_py.coverage" NAME="Unittests in test_LCA.py Coverage Results" MODIFIED="1539348164208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1768163573">
@@ -32,12 +31,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1604" />
+          <entry key="py" value="2258" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1604" />
+          <entry key="Python" value="2258" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -59,12 +58,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LowestCommonAncestor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1540">
-              <caret line="111" selection-start-line="111" selection-end-line="120" selection-end-column="51" />
+            <state relative-caret-position="356">
+              <caret line="66" column="27" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
               <folding>
-                <marker date="1539292464368" expanded="true" signature="543:552" ph="..." />
-                <marker date="1539292464368" expanded="true" signature="1642:1647" ph="..." />
-                <marker date="1539292464368" expanded="true" signature="2093:2099" ph="..." />
+                <marker date="1539348081024" expanded="true" signature="464:470" ph="..." />
+                <marker date="1539348081024" expanded="true" signature="499:508" ph="..." />
+                <marker date="1539348081024" expanded="true" signature="698:783" ph="..." />
+                <marker date="1539348081024" expanded="true" signature="805:814" ph="..." />
+                <marker date="1539348081024" expanded="true" signature="1925:1930" ph="..." />
+                <marker date="1539348081024" expanded="true" signature="2376:2382" ph="..." />
               </folding>
             </state>
           </provider>
@@ -73,8 +75,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_LCA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-395">
-              <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+            <state relative-caret-position="405">
+              <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+                <marker date="1539347307978" expanded="true" signature="511:520" ph="..." />
+                <marker date="1539347307978" expanded="true" signature="808:817" ph="..." />
+                <marker date="1539347307978" expanded="true" signature="1401:1410" ph="..." />
+                <marker date="1539347307978" expanded="true" signature="1935:2116" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -228,46 +237,47 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_LCA_py - 2018.09.26 at 13h 43m 14s.xml">
+    <history-entry file="Unittests_in_test_LCA_py - 2018.10.12 at 13h 12m 10s.xml">
       <configuration name="Unittests in test_LCA.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_LCA_py - 2018.09.26 at 13h 45m 03s.xml">
+    <history-entry file="Unittests_in_test_LCA_py - 2018.10.12 at 13h 12m 27s.xml">
       <configuration name="Unittests in test_LCA.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_LCA_py - 2018.09.26 at 22h 42m 01s.xml">
+    <history-entry file="Unittests_in_test_LCA_py - 2018.10.12 at 13h 15m 42s.xml">
       <configuration name="Unittests in test_LCA.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_LCA_py - 2018.09.26 at 22h 43m 33s.xml">
+    <history-entry file="Unittests_in_test_LCA_py - 2018.10.12 at 13h 16m 20s.xml">
       <configuration name="Unittests in test_LCA.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_LCA_py - 2018.09.26 at 22h 43m 39s.xml">
+    <history-entry file="Unittests_in_test_LCA_py - 2018.10.12 at 13h 21m 11s.xml">
       <configuration name="Unittests in test_LCA.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_LCA_py - 2018.09.30 at 22h 37m 34s.xml">
+    <history-entry file="Unittests_in_test_LCA_py - 2018.10.12 at 13h 22m 37s.xml">
       <configuration name="Unittests in test_LCA.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_LCA_py - 2018.10.01 at 23h 14m 47s.xml">
+    <history-entry file="Unittests_in_test_LCA_py - 2018.10.12 at 13h 27m 03s.xml">
       <configuration name="Unittests in test_LCA.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_LCA_py - 2018.10.06 at 18h 05m 54s.xml">
+    <history-entry file="Unittests_in_test_LCA_py - 2018.10.12 at 13h 27m 36s.xml">
       <configuration name="Unittests in test_LCA.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_LCA_py - 2018.10.06 at 18h 06m 20s.xml">
+    <history-entry file="Unittests_in_test_LCA_py - 2018.10.12 at 13h 28m 20s.xml">
       <configuration name="Unittests in test_LCA.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_LCA_py - 2018.10.11 at 22h 14m 16s.xml">
+    <history-entry file="Unittests_in_test_LCA_py - 2018.10.12 at 13h 28m 29s.xml">
       <configuration name="Unittests in test_LCA.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2956381" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17689823" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32876712" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -305,19 +315,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_LCA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-395">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+        <state relative-caret-position="405">
+          <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1539347307978" expanded="true" signature="511:520" ph="..." />
+            <marker date="1539347307978" expanded="true" signature="808:817" ph="..." />
+            <marker date="1539347307978" expanded="true" signature="1401:1410" ph="..." />
+            <marker date="1539347307978" expanded="true" signature="1935:2116" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LowestCommonAncestor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1540">
-          <caret line="111" selection-start-line="111" selection-end-line="120" selection-end-column="51" />
+        <state relative-caret-position="356">
+          <caret line="66" column="27" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
           <folding>
-            <marker date="1539292464368" expanded="true" signature="543:552" ph="..." />
-            <marker date="1539292464368" expanded="true" signature="1642:1647" ph="..." />
-            <marker date="1539292464368" expanded="true" signature="2093:2099" ph="..." />
+            <marker date="1539348081024" expanded="true" signature="464:470" ph="..." />
+            <marker date="1539348081024" expanded="true" signature="499:508" ph="..." />
+            <marker date="1539348081024" expanded="true" signature="698:783" ph="..." />
+            <marker date="1539348081024" expanded="true" signature="805:814" ph="..." />
+            <marker date="1539348081024" expanded="true" signature="1925:1930" ph="..." />
+            <marker date="1539348081024" expanded="true" signature="2376:2382" ph="..." />
           </folding>
         </state>
       </provider>
