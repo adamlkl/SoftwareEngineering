@@ -75,6 +75,11 @@ class TestDigraph(unittest.TestCase):
             test77.add_vertex(int(x.split(" ")[0]), int(x.split(" ")[1]))
         file_x.close()
         self.assertFalse(test77.check_cyclic())
+        self.assertEqual(test77.compute_lowest_common_ancestor(1, 6, 2), 0)
+        self.assertEqual(test77.compute_lowest_common_ancestor(5, 6, 2), 2)
+        self.assertEqual(test77.compute_lowest_common_ancestor(10, 11, 2), 9)
+        self.assertEqual(test77.compute_lowest_common_ancestor(10, 9, 2), 9)
+        self.assertEqual(test77.compute_lowest_common_ancestor(10, 4, 2), 2)
 
 
 if __name__ == '__main__':

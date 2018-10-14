@@ -1,7 +1,6 @@
 from collections import defaultdict
 from queue import Queue
 
-
 class Digraph:
     
     def __init__(self, vertices, edges):
@@ -60,7 +59,7 @@ class Digraph:
         
         for w in self.digraph[v]:
             if visit[w] is False:
-                if self.__check_cyclic(w, visit, remarked):
+                if self.__check_cyclic(w, visit, remarked) is True:
                     return True
             elif visit[w] is True and remarked[w] is True:
                 return True
@@ -111,13 +110,28 @@ class Digraph:
         if self.haspathto(v) and self.haspathto(w):
             path1 = self.pathto(v, root)
             path2 = self.pathto(w, root)
-            
-            while not path1.empty() or not path2.empty():
-                p1 = path1.get()
-                p2 = path2.get()
+            p1 = path1.get()
+            p2 = path2.get()
+            if path1.empty() or path2.empty():
                 if p1 == p2:
                     return p1
-            return -3
+                else:
+                    return -3
+
+            else:
+                while not path1.empty() or not path2.empty():
+                    if path1.qsize() > path2.qsize():
+                        p1 = path1.get()
+                    elif path2.qsize() > path1.qsize():
+                        p2 = path2.get()
+                    else:
+                        p1 = path1.get()
+                        p2 = path2.get()
+
+                    if p1 == p2:
+                        return p1
+
+                return -3
         
         else:
             return -2
