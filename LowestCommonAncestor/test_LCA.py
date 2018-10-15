@@ -64,22 +64,6 @@ class TestDigraph(unittest.TestCase):
         test10.add_vertex(0, 1)
         test10.add_vertex(0, 2)
         self.assertEqual(test10.compute_lowest_common_ancestor(1, 2, 0), 0)
-    
-    def test_read_file_and_compute_LCA(self):
-        file_x = open("tinyDAG.txt", "r")
-        vn = int(file_x.readline())
-        en = int(file_x.readline())
-        test77 = Digraph(vn, en)
-        
-        for x in file_x:
-            test77.add_vertex(int(x.split(" ")[0]), int(x.split(" ")[1]))
-        file_x.close()
-        self.assertFalse(test77.check_cyclic())
-        self.assertEqual(test77.compute_lowest_common_ancestor(1, 6, 2), 0)
-        self.assertEqual(test77.compute_lowest_common_ancestor(5, 6, 2), 2)
-        self.assertEqual(test77.compute_lowest_common_ancestor(10, 11, 2), 9)
-        self.assertEqual(test77.compute_lowest_common_ancestor(10, 9, 2), 9)
-        self.assertEqual(test77.compute_lowest_common_ancestor(10, 4, 2), 2)
 
     def test_read_file_and_compute_LCA2(self):
         file_x = open("tinyDAG.txt", "r")

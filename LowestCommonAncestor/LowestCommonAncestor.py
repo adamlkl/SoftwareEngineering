@@ -150,32 +150,40 @@ class Digraph:
         return newwalk
 
     def compute_lca2(self, root, v, w):
-        walk = self.find_all_paths(root, v)
-        walk.reverse()
-        newwalk = self.arrangedepth(walk, root)
-        walk2 = self.find_all_paths(root, w)
-        walk2.reverse()
-        newwalk2 = self.arrangedepth(walk2, root)
+        self.bfs(root)
+        self.check_vertex()
+        if self.check_cyclic():
+            return -1
 
-        if len(newwalk) > len(newwalk2):
-            index = len(newwalk) - len(newwalk2)
-            for x in range(len(newwalk2)):
-                if self.intersect(newwalk[index], newwalk2[x]):
-                    return self.intersect(newwalk[index], newwalk2[x])
-                index += 1
+        if self.haspathto(v) and self.haspathto(w):
+            walk = self.find_all_paths(root, v)
+            walk.reverse()
+            newwalk = self.arrangedepth(walk, root)
+            walk2 = self.find_all_paths(root, w)
+            walk2.reverse()
+            newwalk2 = self.arrangedepth(walk2, root)
 
-        elif len(newwalk) < len(newwalk2):
-            index = len(newwalk2) - len(newwalk)
-            for x in range(len(newwalk)):
-                if self.intersect(newwalk[x], newwalk2[index]):
-                    return self.intersect(newwalk[x], newwalk2[index])
-                index += 1
+            if len(newwalk) > len(newwalk2):
+                index = len(newwalk) - len(newwalk2)
+                for x in range(len(newwalk2)):
+                    if self.intersect(newwalk[index], newwalk2[x]):
+                        return self.intersect(newwalk[index], newwalk2[x])
+                    index += 1
+
+            elif len(newwalk) < len(newwalk2):
+                index = len(newwalk2) - len(newwalk)
+                for x in range(len(newwalk)):
+                    if self.intersect(newwalk[x], newwalk2[index]):
+                        return self.intersect(newwalk[x], newwalk2[index])
+                    index += 1
+
+            else:
+                for x in range(len(newwalk)):
+                    if self.intersect(newwalk[x], newwalk2[x]):
+                        return self.intersect(newwalk[x], newwalk2[x])
 
         else:
-            for x in range(len(newwalk)):
-                if self.intersect(newwalk[x], newwalk2[x]):
-                    return self.intersect(newwalk[x], newwalk2[x])
-
+            return -2
     '''A recursive function to find all paths from 'u' to 'd'. 
            visited[] keeps track of vertices in current path. 
            path[] stores actual vertices and path_index is current 
