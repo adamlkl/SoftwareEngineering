@@ -3,11 +3,16 @@ from queue import Queue
 
 
 class Digraph:
-    
+
+    '''constructor of Digraph class. Digraph is stored in the default dict data tyoe.
+    variables in Digraph: V(number of vertices),
+                          E(number of edges)
+                          indgree(number of vertices incident to one vertex)
+                          marked(vertices that can be reached by root)
+                          edgeTo(stores all the direct edges of all vertices when doing bfs'''
     def __init__(self, vertices, edges):
         self.V = int(vertices)
         self.E = int(edges)
-        self.edges = 0
         self.digraph = defaultdict(list)
 
         for v in range(self.V):
@@ -18,32 +23,78 @@ class Digraph:
         self.marked = [False] * self.V
         self.edgeTo = [-1] * self.V
 
+    '''Function: public void add_vertex
+       Parameters: int vertex, int adjacent 
+       Description: connect two edges in a digraph
+       returns: --'''
     def add_vertex(self, v, adj):
         if self.validate_vertex(v) and self.validate_vertex(adj):
             self.digraph[v].append(adj)
             self.indegree[adj] += 1
-            self.edges += 1
 
+    '''Function: public void check_vertex
+       Parameters: --
+       Description: correct the number of of vertices in the digraph
+       returns: --'''
     def check_vertex(self):
         if self.V != len(self.digraph):
             self.V = len(self.digraph)
 
+    '''Function: public int indegree
+       Parameters: int vertex
+       Description: returns the indegree of a certain vertex, otherwise 
+                    return None If vertex not available in digraph. 
+       returns: int indegree[v] / None'''
     def indegree(self, v):
-        return self.indegree[v]
-    
+        if self.validate_vertex(v):
+            return self.indegree[v]
+        else:
+            return None
+
+    '''Function: public int [] incidence
+       Parameters: int vertex
+       Description: returns the vertices incident to a certain vertex, 
+                    otherwise return None if vertex not available in 
+                    digraph. 
+       returns: int [] digraph[v] / None'''
     def incidence(self, v):
-        return self.digraph[v]
-    
+        if self.validate_vertex(v):
+            return self.digraph[v]
+        else:
+            return None
+
+    '''Function: public int [] find_root
+       Parameters: --
+       Description: returns the root of the digraph stored in an int 
+                    array, if there are no roots, then return an empty 
+                    array. The roots are the vertices that do not have 
+                    any vertex incident to it. 
+       returns: int [] roots'''
     def find_root(self):
         roots = []
         for index in range(len(self.indegree)):
             if self.indegree[index] is 0:
                 roots.append(index)
         return roots
-    
+
+    '''Function: public boolean validate_vertex
+       Parameters: int vertex
+       Description: checks if a vertex is available in the range 
+                    of the digraph. True if vertex is integer 
+                    type and available, otherwise False
+       returns: boolean True or False'''
     def validate_vertex(self, v):
         return (type(v) is int) and (v >= 0) and (v < self.V)
-    
+
+    '''Function: public boolean check_cyclic
+       Parameters: --
+       Description: checks if there is a cycle in a digraph. 
+                    This can be done by iteratively going 
+                    through every vertex and search for a path 
+                    that eventually reaches the current vertex 
+                    itself. This makes sure that the digraph 
+                    is a acyclic to perform compute LCA 
+       returns: boolean True/False'''
     def check_cyclic(self):
         self.check_vertex()
         visit = [False] * self.V
@@ -53,7 +104,15 @@ class Digraph:
                 if self.__check_cyclic(v, visit, remarked):
                     return True
         return False
-    
+
+    '''Function: private boolean __check_cyclic
+       Parameters: int vertex, boolean [] visit, boolean []remarked
+       Description: recursively goes through every vertex 
+                    in the digraph, marking them every time
+                    a vertex is passed through and if the 
+                    marked vertex is transversed again, the 
+                    digraph has a cycle.
+       returns: boolean True/False'''
     def __check_cyclic(self, v, visit, remarked):
         visit[v] = True
         remarked[v] = True
@@ -68,13 +127,30 @@ class Digraph:
         remarked[v] = False
         return False
 
+    '''Function: public int get_vertex
+       Parameters: --
+       Description: returns number of vertices in the digraph
+       returns: int V'''
     def get_vertex(self):
         return self.V
-    
+
+    '''Function: public int get_edge
+       Parameters: --
+       Description: returns number of edges in the digraph
+       returns: int E'''
     def get_edge(self):
         return self.E
-    
+
+    '''Function: public void bfs
+       Parameters: int source
+       Description: performs breadth first search to compute all 
+                   the vertices accessible to the root. Utilise 
+                   a FIFO queue to store all vertices incident 
+                   to current vertex and iterate through them, mark
+                   any vertex that has been transvered before.
+       returns: --'''
     def bfs(self, s):
+        self.marked = [False] * self.V
         q = Queue()
         self.marked[s] = True
         q.put(s)
@@ -86,74 +162,34 @@ class Digraph:
                     self.marked[dst] = True
                     q.put(dst)
 
+    '''Function: public boolean haspathto
+       Parameters: int vertex
+       Description: checks if there exist a path between a vertex
+                    and the root.
+       returns: boolean marked[v]'''
     def haspathto(self, v):
         self.validate_vertex(v)
         return self.marked[v]
-    
-    def pathto(self, v, root):
-        self.validate_vertex(v)
-        if not self.haspathto(v):
-            return None
-        q = Queue()
-        dest = v
-        while dest != root:
-            q.put(dest)
-            dest = self.edgeTo[dest]
-        q.put(root)
-        return q
 
-    def compute_lowest_common_ancestor(self, v, w, root):
-        self.bfs(root)
-        self.check_vertex()
-        if self.check_cyclic():
-            return -1
-
-        if self.haspathto(v) and self.haspathto(w):
-            path1 = self.pathto(v, root)
-            path2 = self.pathto(w, root)
-            p1 = path1.get()
-            p2 = path2.get()
-            if path1.empty() or path2.empty():
-                if p1 == p2:
-                    return p1
-                else:
-                    return -3
-
-            else:
-                while not path1.empty() or not path2.empty():
-                    if path1.qsize() > path2.qsize():
-                        p1 = path1.get()
-                    elif path2.qsize() > path1.qsize():
-                        p2 = path2.get()
-                    else:
-                        p1 = path1.get()
-                        p2 = path2.get()
-
-                    if p1 == p2:
-                        return p1
-
-                return -3
-
-        else:
-            return -2
-
-    def arrangedepth(self, walk, dst):
-        newwalk = defaultdict(list)
-        depthlevel = 0
-        for y in walk:
-            self.validate_vertex(y)
-            newwalk[depthlevel].append(y)
-            if y != dst:
-                depthlevel += 1
-            else:
-                depthlevel = 0
-        return newwalk
-
+    '''Function: public int [] compute_lca2
+       Parameters: int root, int vertex, int vertex2
+       Description: computes the Lowest Common Ancestor by finding 
+                    all paths from both vertices to the root, arranging 
+                    arranging them in a depth level default dict, 
+                    then intersect the arranged list in the dict in 
+                    increasing order of the depth. This way, all the 
+                    lowest common ancestor can be found. Returns -1 if 
+                    root,vertex and vertex2 are validated False, -2 if 
+                    graph not acyclic and -3 if no path from root to 
+                    either one of the vertex parameters.
+       returns: int [] lca'''
     def compute_lca2(self, root, v, w):
+        if not (self.validate_vertex(root) and self.validate_vertex(v) and self.validate_vertex(w)):
+            return -1
+        elif self.check_cyclic():
+            return -2
         self.bfs(root)
         self.check_vertex()
-        if self.check_cyclic():
-            return -1
 
         if self.haspathto(v) and self.haspathto(w):
             walk = self.find_all_paths(root, v)
@@ -183,12 +219,36 @@ class Digraph:
                         return self.intersect(newwalk[x], newwalk2[x])
 
         else:
-            return -2
-    '''A recursive function to find all paths from 'u' to 'd'. 
-           visited[] keeps track of vertices in current path. 
-           path[] stores actual vertices and path_index is current 
-           index in path[]'''
+            return -3
 
+    '''Function: public int [] find_all_paths
+       Parameters: int root, int vertex
+       Description: finds all paths from 'root' to 'vertex' and store 
+                    them in a walk list
+       returns: int [] walk'''
+    def find_all_paths(self, s, d):
+
+        # Mark all the vertices as not visited
+        visited = [False] * self.V
+        walk = list()
+
+        # Create an array to store paths
+        path = []
+
+        # Call the recursive helper function to find all paths
+        self.__find_all_paths_util(s, d, visited, path, walk)
+        return walk
+
+    '''Function: private void __find_all_paths
+       Parameters: int current vertex, int vertex, boolean [] visited, 
+                   Queue path, int [] walk
+       Description: A recursive function to find all paths from 'u' to 'd'. 
+                    visited[] keeps track of vertices in current path. 
+                    path[] stores actual vertices and path_index is current 
+                    index in path[]. Stores the path in the walk list every
+                    time the destination vertex is reached, otherwise pop the 
+                    path out 
+       returns: --'''
     def __find_all_paths_util(self, u, d, visited, path, walk):
 
         # Mark the current node as visited and store in path
@@ -211,23 +271,35 @@ class Digraph:
         path.pop()
         visited[u] = False
 
-    # finds all paths from 's' to 'd'
-    def find_all_paths(self, s, d):
+    '''Function: public int [] arrangedepth
+       Parameters: int [] walk, int vertex
+       Description: arrange the walk acquired from find all paths in 
+                    depth order and store them in a defaultdict for 
+                    easier comparism in terms of intersection. 
+       returns: defaultdict newwalk'''
+    def arrangedepth(self, walk, dst):
+        newwalk = defaultdict(list)
+        depthlevel = 0
+        for y in walk:
+            self.validate_vertex(y)
+            newwalk[depthlevel].append(y)
+            if y != dst:
+                depthlevel += 1
+            else:
+                depthlevel = 0
+        return newwalk
 
-        # Mark all the vertices as not visited
-        visited = [False] * self.V
-        walk = list()
-
-        # Create an array to store paths
-        path = []
-
-        # Call the recursive helper function to find all paths
-        self.__find_all_paths_util(s, d, visited, path, walk)
-        return walk
-
-    def print_digraph(self):
-        return self.digraph
-
+    '''Function: public static list intersect
+       Parameters: list a, list b
+       Description: intersect two list to get the common vertices 
+       returns: list (a&b)'''
     @staticmethod
     def intersect(a, b):
         return list(set(a) & set(b))
+
+    '''Function: public defaultdict print_digraph
+       Parameters: --
+       Description: returns the digraph
+       returns: defaultdict digraph'''
+    def print_digraph(self):
+        return self.digraph
