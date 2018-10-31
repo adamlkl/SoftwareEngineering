@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.26)  23 OCT 2018 03:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.26)  31 OCT 2018 19:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -64,21 +64,22 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 \thanksmargin=\skip44
 \droptitle=\skip45
 )
-No file BiographyofSergeyBrin.aux.
+(./BiographyofSergeyBrin.aux)
 \openout1 = `BiographyofSergeyBrin.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -115,15 +116,19 @@ LaTeX Font Info:    ... okay on input line 7.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 9.
+(Font)              size <12> substituted on input line 8.
 
 [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3]
-Overfull \hbox (23.34862pt too wide) in paragraph at lines 52--54
-\OT1/cmr/m/n/12 https://www.investopedia.com/university/sergey-brin-biography/s
-ergey-brin-success-
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 51--54
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 55--58
+
  []
 
 [4] (./BiographyofSergeyBrin.aux)
@@ -131,19 +136,22 @@ ergey-brin-success-
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 815 strings out of 492649
- 11446 string characters out of 6129622
+ 820 strings out of 492649
+ 11531 string characters out of 6129622
  80501 words of memory out of 5000000
- 4755 multiletter control sequences out of 15000+600000
- 5198 words of font info for 19 fonts, out of 8000000 for 9000
+ 4758 multiletter control sequences out of 15000+600000
+ 5020 words of font info for 19 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 23i,4n,19p,1199b,176s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 23i,4n,19p,1199b,209s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on BiographyofSergeyBrin.pdf (4 pages, 52316 bytes).
+/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on BiographyofSergeyBrin.pdf (4 pages, 46325 bytes).
 PDF statistics:
  29 PDF objects out of 1000 (max. 8388607)
  19 compressed objects within 1 object stream
